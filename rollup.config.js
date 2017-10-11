@@ -1,5 +1,6 @@
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
+import eslint from 'rollup-plugin-eslint'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import replace from 'rollup-plugin-replace'
 import uglify from 'rollup-plugin-uglify'
@@ -19,6 +20,11 @@ export default {
     }),
     replace({ 'process.env.NODE_ENV': JSON.stringify(env) }),
     commonjs(),
+    eslint({
+      exclude: [
+        'src/styles/**',
+      ],
+    }),
     babel({
       exclude: 'node_modules/**'
     }),
