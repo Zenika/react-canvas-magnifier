@@ -10,8 +10,8 @@ const isProd = env === 'production'
 export default {
   input: 'src/main.jsx',
   output: {
-    file: `dist/react-canvas-magnifier${isProd ? '.min' : ''}.js`,
-    format: 'iife',
+    file: `dist/react-canvas-magnifier.js`,
+    format: 'umd',
   },
   plugins: [
     nodeResolve({
