@@ -11,7 +11,7 @@ const isProd = env === 'production'
 export default {
   input: 'src/main.jsx',
   output: {
-    file: `dist/react-canvas-magnifier.js`,
+    file: 'dist/react-canvas-magnifier.js',
     format: 'umd',
   },
   plugins: [
@@ -29,5 +29,6 @@ export default {
       exclude: 'node_modules/**'
     }),
     isProd && uglify()
-  ]
+  ],
+  external: ['react', 'react-dom']
 }
